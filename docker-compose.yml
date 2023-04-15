@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  dev:
+    build:
+      context: ./base
+      args:
+        - CUR_UID=${CURRENT_UID}
+        - CUR_GID=${CURRENT_GID}
+    ports:
+      - 8000:8000
+      - 8081:8081
+    volumes:
+      - ./development/:/development
+    user: ${CURRENT_UID}:${CURRENT_GID}
+    command: sh -c "bench init frappe-bench && cd frappe-bench && bench start"
