@@ -8,8 +8,8 @@ export CURRENT_GID
 
 .PHONY: init
 init:
-	./mkdir development
-	docker-compose run -it dev mysql_secure_installation
+	mkdir ./development
+
 .PHONY: up
 up:
 	docker-compose up -d --force-recreate --build --remove-orphans
