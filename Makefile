@@ -6,10 +6,6 @@ CURRENT_GID := $(shell id -g)
 export CURRENT_UID
 export CURRENT_GID
 
-.PHONY: init
-init:
-	mkdir ./development
-
 .PHONY: up
 up:
 	docker-compose up -d --force-recreate --build --remove-orphans
@@ -24,7 +20,8 @@ logs:
 
 .PHONY: sh
 sh:
-	docker-compose run -it dev /bin/bash
+	docker-compose exec -it frappe /bin/bash
 
-
-# bench get-app https://github.com/frappe/wiki
+.PHONY: start
+start:
+	docker-compose exec -it frappe sh -c "cd frappe-bench && bench start"
