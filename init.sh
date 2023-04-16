@@ -19,7 +19,7 @@ bench add-system-manager --password ${SYSTEM_MANAGER_PASSWORD} ${SYSTEM_MANAGER_
 bench use ${FRAPPE_PREFIX}.localhost
 
 echo "Create app"
-bench new-app ${FRAPPE_PREFIX}-app
+bench new-app --no-git ${FRAPPE_PREFIX}-app
 
 echo "Installing app to site"
 bench --site ${FRAPPE_PREFIX}.localhost install-app ${FRAPPE_PREFIX}-app
