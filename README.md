@@ -16,6 +16,7 @@ make start
 ```
 
 Сайт будет доступен на http://mysite.localhost:8000
+Administrator:admin
 
 ## Остановить все контейнеры
 
