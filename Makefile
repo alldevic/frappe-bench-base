@@ -26,4 +26,4 @@ sh:
 
 .PHONY: start
 start:
-	docker-compose exec -it frappe sh -c "cd $(FRAPPE_PREFIX)-bench && bench start"
+	docker-compose exec -d frappe sh -c "cd $(FRAPPE_PREFIX)-bench && bench start"
